@@ -1,0 +1,95 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity PongBat is
+    port(CLK100MHZ : in std_logic;
+         VGA_R : out std_logic_vector(3 downto 0);
+         VGA_G : out std_logic_vector(3 downto 0);
+         VGA_B : out std_logic_vector(3 downto 0);
+         HS : out std_logic;
+         VS : out std_logic;
+         BTNU : in std_logic;
+         BTNL : in std_logic;
+         BTNR : in std_logic;
+         BTND : in std_logic;
+         write_hP12 : out std_logic;
+         write_vP1 : out std_logic;
+         write_vP2 : out std_logic);
+end PongBat;
+
+architecture Behavioral of PongBat is
+
+component VGA
+    port(CLK100MHZ : in std_logic;
+         HS : out std_logic;
+         VS : out std_logic;
+         Hcounter : inout integer range 0 to 799 := 0;
+         Vcounter : inout integer range 0 to 524 := 0);
+end component;
+
+    signal Hcounter : integer;
+    signal Vcounter : integer;
+    signal YposP1 : integer := 277;
+    signal YposP2 : integer := 277;
+
+begin
+
+Timings2 : VGA
+    port map(CLK100MHZ => CLK100MHZ,
+             HS => HS,
+             VS => VS,
+             Hcounter => Hcounter,
+             Vcounter => Vcounter);
+
+    pHorizontal : process(Hcounter) -- set width of bats
+begin
+    if Hcounter >= 16 and Hcounter <= 20 then
+        write_hP12 <= '1';
+    else    
+        write_hP12 <= '0';
+    end if;
+end process;
+
+    pPlayer1 : process(Vcounter,BTNL,BTND,YposP1) -- set location and height of bat 1
+begin
+    if YposP1 + 25 > 6 then 
+        if BTNL = '1' then
+            YposP1 <= YposP1 - 1;
+        end if;
+    end if;
+    
+    if YposP1 < 473 then
+        if BTND = '1' then
+            YposP1 <= YposP1 + 1;
+        end if;
+    end if;
+    
+    if (Vcounter >= YposP1 - 25) and (Vcounter <= YposP1) then
+        write_vP1 <= '1';
+    else
+        write_vP1 <= '0';
+    end if;
+end process; 
+
+    pPlayer2 : process(Vcounter,BTNU,BTNR,YposP2) --set location and height of bat 2
+begin
+    if YposP2 - 25 > 6 then
+        if BTNU = '1' then
+            YposP2 <= YposP2 - 1;
+        end if;
+    end if;
+    
+    if YposP2 < 473 then
+        if BTND = '1' then
+            YposP2 <= YposP2 + 1;
+        end if;
+    end if;
+    
+    if (Vcounter >= YposP2 - 25) and (Vcounter <= YposP2) then
+        write_vP2 <= '1';
+    else
+        write_vP2 <= '0';
+    end if;
+end process;
+end Behavioral;
