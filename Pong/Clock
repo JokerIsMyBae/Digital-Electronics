@@ -1,0 +1,27 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity Clock is
+    Port (CLK100MHZ : in std_logic;
+          CLK25MHZ : out std_logic);
+end Clock;
+
+architecture Behavioral of Clock is
+
+    signal counter : std_logic := '0';
+    signal CLKSET : std_logic := '0';
+    
+begin
+
+    pClock : process(CLK100MHZ,CLKSET)
+begin
+    if rising_edge(CLK100MHZ) then
+        if counter = '1' then
+            CLKSET <= not(CLKSET);
+        end if;
+        counter <= not(counter);
+    end if;
+    CLK25MHZ <= CLKSET;
+end process;
+end Behavioral;
