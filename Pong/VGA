@@ -1,0 +1,74 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity VGA is
+    port(CLK100MHZ : in std_logic;
+         HS : out std_logic;
+         VS : out std_logic;
+         Hcounter : inout integer range 0 to 799 := 0;
+         Vcounter : inout integer range 0 to 524 := 0);
+end VGA;
+
+architecture Behavioral of VGA is
+
+component Clock
+    Port (CLK100MHZ : in std_logic;
+          CLK25MHZ : out std_logic);
+end component;
+
+    signal CLK25MHZ : std_logic;
+
+begin
+
+ClockSet : Clock
+port map(CLK100MHZ => CLK100MHZ,
+         CLK25MHZ => CLK25MHZ);
+
+    pHcount : process(CLK25MHZ)
+begin
+    if rising_edge(CLK25MHZ) then
+        if Hcounter >= 799 then
+            Hcounter <= 0;
+        else 
+            Hcounter <= Hcounter + 1;
+        end if;
+    end if;
+end process;
+
+    pVcount : process(CLK25MHZ)
+begin
+    if rising_edge(CLK25MHZ) then
+        if Vcounter >= 524 then
+            Vcounter <= 0;
+        elsif Hcounter >= 799 then
+            Vcounter <= Vcounter + 1;
+        else
+            Vcounter <= Vcounter;
+        end if;
+    end if;
+end process;
+
+    pHsync : process(Hcounter)
+begin
+    if Hcounter <= 655 then
+        HS <= '1';
+    elsif Hcounter <= 751 then
+        HS <= '0';
+    else
+        HS <= '1';
+    end if;
+end process;
+    
+    pVsync : process(Vcounter)
+begin
+    if Vcounter <= 489 then
+        VS <= '1';
+    elsif Vcounter <= 491 then
+        VS <= '0';
+    else
+        VS <= '1';
+    end if;
+end process;
+
+end Behavioral;
