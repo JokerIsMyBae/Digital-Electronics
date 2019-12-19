@@ -13,27 +13,8 @@ end Random;
 architecture Behavioral of Random is
 
     signal lfsr : std_logic_vector(11 downto 0) := seed;
-    signal CLK : std_logic := '0';
---    signal rise : std_logic := '0';
---    signal fall : std_logic := '0';
 
 begin
-
---    pRising : process(CLKCOLOR)
---begin
---    if rising_edge(CLKCOLOR) then
---        rise <= not(rise);
---    end if;
---end process;
---
---    pFalling : process(CLKCOLOR)
---begin
---    if falling_edge(CLKCOLOR) then
---        fall <= rise;
---    end if;
---end process;
---
---    CLK <= (fall xor rise) xor CLKCOLOR;
 
     pRandom : process(CLKCOLOR)
 begin

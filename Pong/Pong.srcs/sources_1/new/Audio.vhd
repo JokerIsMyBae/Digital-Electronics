@@ -22,8 +22,8 @@ architecture Behavioral of Audio is
     signal AUD_SD1 : std_logic := '0';
     signal AUD_SD2 : std_logic := '0';
     signal AUD_SD3 : std_logic := '0';
-    signal SD : integer range 0 to 10 := 0;
-    signal SD1 : integer range 0 to 30 := 0;
+    signal SD : integer range 0 to 15 := 0;
+    signal SD1 : integer range 0 to 45 := 0;
     signal EN : std_logic := '0';
 
 begin
@@ -84,7 +84,7 @@ begin
     if rising_edge(CLKBALL) then
         if AUD_SD1 = '1' or AUD_SD2 = '1' then
             SD <= 1;
-        elsif SD >= 10 then
+        elsif SD >= 15 then
             SD <= 0;
         elsif SD > 0 then
             SD <= SD + 1;
@@ -94,7 +94,7 @@ begin
         
         if AUD_SD3 = '1' then
             SD1 <= 1;
-        elsif SD1 >= 30 then
+        elsif SD1 >= 45 then
             SD1 <= 0;
         elsif SD1 > 0 then
             SD1 <= SD1 + 1;

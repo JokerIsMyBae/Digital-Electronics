@@ -10,7 +10,9 @@ entity VGA is
          Vcounter : out integer range 0 to 525 := 0;
          CLK500HZ : out std_logic;
          CLKBALL : out std_logic;
-         CLKAUD : out std_logic := '0');
+         CLKAUD : out std_logic := '0';
+         CLKLOSE : out std_logic;
+         SW_S : in std_logic);
 end VGA;
 
 architecture Behavioral of VGA is
@@ -20,16 +22,18 @@ architecture Behavioral of VGA is
     signal counter1 : std_logic := '0'; 
     signal counter2 : integer range 0 to 100000 := 0;
     signal counter3 : integer range 0 to 250000 := 0;
-    signal counter4 : integer range 0 to 1134 := 0;
+    signal counter4 : integer range 0 to 250000 := 0;
+    signal counter5 : integer range 0 to 1134 := 0;
     signal CLKSET1 : std_logic := '0';
     signal CLKSET2 : std_logic := '0';
     signal CLKSET3 : std_logic := '0';
+    signal CLKSET4 : std_logic := '0';
     signal CLK25MHZ : std_logic := '0';
     signal CLKAUD_set : std_logic := '0';
 
 begin
 
-    pClock : process(CLK100MHZ,CLKSET1,CLKSET2,CLKSET3,CLKAUD_set)
+    pClock : process(CLK100MHZ,CLKSET1,CLKSET2,CLKSET3,CLKSET4,CLKAUD_set)
 begin
     if rising_edge(CLK100MHZ) then
         counter1 <= not(counter1);
@@ -42,22 +46,38 @@ begin
         else
             counter2 <= counter2 + 1;
         end if;
-        if counter3 >= 250000 then
-            counter3 <= 0;
-            CLKSET3 <= not(CLKSET3);
+        if SW_S = '1' then
+            if counter3 >= 125000 then
+                counter3 <= 0;
+                CLKSET3 <= not(CLKSET3);
+            else
+                counter3 <= counter3 + 1;
+            end if;
         else
-            counter3 <= counter3 + 1;
+            if counter3 >= 250000 then
+                counter3 <= 0;
+                CLKSET3 <= not(CLKSET3);
+            else
+                counter3 <= counter3 + 1;
+            end if;
         end if;
-        if counter4 >= 1134 then
+        if counter4 >= 250000 then
             counter4 <= 0;
-            CLKAUD_set <= not(CLKAUD_set);
+            CLKSET4 <= not(CLKSET4);
         else
             counter4 <= counter4 + 1;
+        end if;
+        if counter5 >= 1134 then
+            counter5 <= 0;
+            CLKAUD_set <= not(CLKAUD_set);
+        else
+            counter5 <= counter5 + 1;
         end if;
     end if;
     CLK25MHZ <= CLKSET1;
     CLK500HZ <= CLKSET2;
     CLKBALL <= CLKSET3;
+    CLKLOSE <= CLKSET4;
     CLKAUD <= CLKAUD_set;
 end process;
 

@@ -7,14 +7,15 @@ entity Scorebord is
     port(AN : out std_logic_vector(7 downto 0);
          CA : out std_logic_vector(0 to 6);
          CLK500HZ : in std_logic;
-         CLKBALL : in std_logic;
-         BallposX : in integer range 0 to 640);
+         CLKLOSE : in std_logic;
+         BallposX : in integer range 0 to 640;
+         lost : out std_logic);
 end Scorebord;
 
 architecture Behavioral of Scorebord is
     
     signal counterC : integer range 0 to 7 := 7;
-    signal counterL : integer range 0 to 200 := 0;
+    signal counterL : integer range 0 to 1000 := 0;
     signal unitsP1 : integer range 0 to 10 := 0;
     signal tensP1 : integer range 0 to 10:= 0;
     signal unitsP2 : integer range 0 to 10 := 0;
@@ -40,9 +41,9 @@ architecture Behavioral of Scorebord is
 
 begin
 
-    pScoreSet : process(CLKBALL)
+    pScoreSet : process(CLKLOSE)
 begin
-    if rising_edge(CLKBALL) then
+    if rising_edge(CLKLOSE) then
         if counterL = 0 then
             lostP1 <= '0';
             lostP2 <= '0';
@@ -56,12 +57,10 @@ begin
                 lostP2 <= '0';
             elsif BallposX < 7 then
                 scoreP2 <= scoreP2 + 1;
-                counterL <= 0;
             elsif BallposX + gBallSize > 633 then
                 scoreP1 <= scoreP1 + 1;
-                counterL <= 0;
             end if;
-        elsif counterL >= 200 then
+        elsif counterL >= 1000 then
             counterL <= 0;
             scoreP1 <= 0;
             scoreP2 <= 0;
@@ -69,9 +68,13 @@ begin
             lostP2 <= '0';
         else
             counterL <= counterL + 1;
+            scoreP1 <= 0;
+            scoreP2 <= 0;
         end if;
     end if;
 end process;
+
+    lost <= lostP1 or lostP2;
         
     pSplitScore : process(scoreP1,scoreP2,tensP1,tensP2)
 begin
@@ -140,7 +143,7 @@ begin
         else 
             counterC <= counterC - 1;
         end if;
-        if  counterL > 0 then
+        if  counterL = 0 then
             if counterC = 7 then
                 CA <= cSegm(tensP1);
                 AN <= (7 => '0', others => '1');

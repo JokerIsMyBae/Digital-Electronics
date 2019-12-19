@@ -1,10 +1,15 @@
+--Alles Werkt
+
 --Uitbreidingen: 
 --Generics om breedte en lengte van bal, palletjes en randen te bepalen
 --lfsr om random color te bepalen van de bal
 --Geluidje bij botsingen, langer wanneer er gescoord wordt
 --Meest rechtse switch is pauzeknop
+--Tweede van rechts activeert snellere modus
 --Bij het bereiken van een score van 25 wordt er op het andere display 'LOSE' afgebeeld, en wordt de score gereset
 --Meest linkse switch activeert discomodus
+--Tweede switch van links laat rechtse palletje door computer bestuurd worden
+--Derde switch van links laat linkse palletje door computer bestuurd worden
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -26,7 +31,10 @@ entity Pong is
          AUD_PWM : out std_logic;
          AUD_SD : out std_logic;
          SW_P : in std_logic;
-         SW_C : in std_logic);
+         SW_C : in std_logic;
+         SW_S : in std_logic;
+         SW_AI1 : in std_logic;
+         SW_AI2 : in std_logic);
 end Pong;
 
 architecture Behavioral of Pong is
@@ -39,7 +47,9 @@ component VGA
          Vcounter : out integer range 0 to 525 := 0;
          CLK500HZ : out std_logic;
          CLKBALL : out std_logic;
-         CLKAUD : out std_logic := '0');
+         CLKAUD : out std_logic := '0';
+         CLKLOSE : out std_logic;
+         SW_S : in std_logic);
 end component;
 
 component Borders
@@ -68,7 +78,10 @@ component PongBat
          Hcounter : in integer range 0 to 799 := 0;
          Vcounter : in integer range 0 to 524 := 0;
          CLKBALL : in std_logic;
-         SW_P : in std_logic);
+         SW_P : in std_logic;
+         lost : in std_logic;
+         SW_AI1 : in std_logic;
+         SW_AI2 : in std_logic);
 end component;
 
 component Ball
@@ -83,7 +96,8 @@ component Ball
          YposP1 : in integer range 0 to 480;
          YposP2 : in integer range 0 to 480;
          CLKCOLOR_out : out std_logic;
-         SW_P : in std_logic);
+         SW_P : in std_logic;
+         lost : in std_logic);
 end component;
 
 component Scorebord
@@ -91,8 +105,9 @@ component Scorebord
     port(AN : out std_logic_vector(7 downto 0);
          CA : out std_logic_vector(0 to 6);
          CLK500HZ : in std_logic;
-         CLKBALL : in std_logic;
-         BallposX : in integer range 0 to 640);
+         CLKLOSE : in std_logic;
+         BallposX : in integer range 0 to 640;
+         lost : out std_logic);
 end component;
 
 component Random
@@ -120,11 +135,13 @@ component Background
     port(CLK100MHZ : in std_logic;
          red_out : out std_logic_vector(3 downto 0);
          green_out : out std_logic_vector(3 downto 0);
-         blue_out : out std_logic_vector(3 downto 0));
+         blue_out : out std_logic_vector(3 downto 0);
+         SW_P : in std_logic);
 end component;
          
     signal CLKBALL : std_logic;
     signal CLK500HZ : std_logic;
+    signal CLKLOSE : std_logic;
     signal Hcounter :  integer range 0 to 800;
     signal Vcounter :  integer range 0 to 525;
     signal write_h : std_logic;
@@ -146,6 +163,8 @@ end component;
     signal R : std_logic_vector(3 downto 0);
     signal G : std_logic_vector(3 downto 0);
     signal B : std_logic_vector(3 downto 0);
+    signal lost : std_logic;
+    
 begin
 
 Timings : VGA
@@ -156,7 +175,9 @@ Timings : VGA
              Vcounter => Vcounter,
              CLK500HZ => CLK500HZ,
              CLKBALL => CLKBALL,
-             CLKAUD => CLKAUD);
+             CLKAUD => CLKAUD,
+             CLKLOSE => CLKLOSE,
+             SW_S => SW_S);
 
 Border : Borders
     generic map(gWidth => 5)
@@ -183,7 +204,10 @@ Players : PongBat
              Hcounter => Hcounter,
              Vcounter => Vcounter,
              CLKBALL => CLKBALL,
-             SW_P => SW_P);
+             SW_P => SW_P,
+             lost => lost,
+             SW_AI1 => SW_AI1,
+             SW_AI2 => SW_AI2);
 
 BallPos : Ball
     generic map(gBallsize => 5,
@@ -197,15 +221,17 @@ BallPos : Ball
              YposP1 => YposP1,
              YposP2 => YposP2,
              CLKCOLOR_out => CLKCOLOR,
-             SW_P => SW_P);
+             SW_P => SW_P,
+             lost => lost);
 
 Score : Scorebord
     generic map(gBallSize => 5)
     port map(AN => AN,
              CA => CA,
              CLK500HZ => CLK500HZ,
-             CLKBALL => CLKBALL,
-             BallposX => BallposX);
+             CLKLOSE => CLKLOSE,
+             BallposX => BallposX,
+             lost => lost);
              
 RandomColor : Random
     generic map(seed => "000000000001")
@@ -230,7 +256,8 @@ BackgroundColor : Background
     port map(CLK100MHZ => CLK100MHZ,
              red_out => R,
              green_out => G,
-             blue_out => B);
+             blue_out => B,
+             SW_P => SW_P);
 
     pWrite : process(write_h,write_v,write_p,write_hP12,write_vP1,write_vP2,write_ball,Hcounter,Vcounter,color1,color2,color3,SW_C,R,G,B)
 begin
@@ -254,15 +281,26 @@ begin
             VGA_G <= "1111";
             VGA_B <= "1111";
         elsif write_hP12 = '1' and write_vP1 = '1' then
-            VGA_R <= "0000";
-            VGA_G <= "0000";
-            VGA_B <= "1111";
+            if SW_C = '0' then
+                VGA_R <= "0000";
+                VGA_G <= "0000";
+                VGA_B <= "1111";
+            else
+                VGA_R <= "1111";
+                VGA_G <= "1111";
+                VGA_B <= "1111";
+            end if;
         elsif write_hP12 = '1' and write_vP2 = '1' then
-            VGA_R <= "1111";
-            VGA_G <= "0000";
-            VGA_B <= "0000";
+            if SW_C = '0' then
+                VGA_R <= "1111";
+                VGA_G <= "0000";
+                VGA_B <= "0000";
+            else
+                VGA_R <= "1111";
+                VGA_G <= "1111";
+                VGA_B <= "1111";
+            end if;
         elsif SW_C = '1' then
-        
             VGA_R <= R;
             VGA_G <= G;
             VGA_B <= B;

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Wed Dec 18 16:43:27 2019
+| Date             : Thu Dec 19 10:31:07 2019
 | Host             : LAPTOP-T495 running 64-bit major release  (build 9200)
 | Command          : report_power -file Pong_power_routed.rpt -pb Pong_power_summary_routed.pb -rpx Pong_power_routed.rpx
 | Design           : Pong
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.131        |
+| Total On-Chip Power (W)  | 0.122        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.034        |
+| Dynamic (W)              | 0.024        |
 | Device Static (W)        | 0.097        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 84.4         |
@@ -52,18 +52,18 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.001 |        3 |       --- |             --- |
-| Slice Logic    |     0.002 |      916 |       --- |             --- |
-|   LUT as Logic |     0.002 |      512 |     63400 |            0.81 |
-|   Register     |    <0.001 |      183 |    126800 |            0.14 |
-|   CARRY4       |    <0.001 |       64 |     15850 |            0.40 |
-|   F7/F8 Muxes  |    <0.001 |        3 |     63400 |           <0.01 |
+| Clocks         |     0.002 |        3 |       --- |             --- |
+| Slice Logic    |     0.002 |     1039 |       --- |             --- |
+|   LUT as Logic |     0.001 |      566 |     63400 |            0.89 |
+|   Register     |    <0.001 |      245 |    126800 |            0.19 |
+|   CARRY4       |    <0.001 |       75 |     15850 |            0.47 |
 |   BUFG         |    <0.001 |        1 |        32 |            3.13 |
-|   Others       |     0.000 |       12 |       --- |             --- |
-| Signals        |     0.002 |      510 |       --- |             --- |
-| I/O            |     0.028 |       38 |       210 |           18.10 |
+|   F7/F8 Muxes  |    <0.001 |        3 |     63400 |           <0.01 |
+|   Others       |     0.000 |       14 |       --- |             --- |
+| Signals        |     0.001 |      614 |       --- |             --- |
+| I/O            |     0.020 |       41 |       210 |           19.52 |
 | Static Power   |     0.097 |          |           |                 |
-| Total          |     0.131 |          |           |                 |
+| Total          |     0.122 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,9 +73,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.021 |       0.006 |      0.015 |
+| Vccint    |       1.000 |     0.020 |       0.005 |      0.015 |
 | Vccaux    |       1.800 |     0.019 |       0.001 |      0.018 |
-| Vcco33    |       3.300 |     0.012 |       0.008 |      0.004 |
+| Vcco33    |       3.300 |     0.010 |       0.006 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -142,9 +142,7 @@ Table of Contents
 +-----------+-----------+
 | Name      | Power (W) |
 +-----------+-----------+
-| Pong      |     0.034 |
-|   BallPos |     0.001 |
-|   Score   |     0.001 |
+| Pong      |     0.024 |
 |   Timings |     0.002 |
 +-----------+-----------+
 

@@ -19,6 +19,7 @@ proc create_report { reportName command } {
 }
 set_param chipscope.maxJobs 2
 set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config  -id {Synth 8-614}  -string {{WARNING: [Synth 8-614] signal 'tensP1' is read in the process but is not in the sensitivity list [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Scorebord.vhd:37]}}  -suppress 
 set_msg_config  -id {Synth 8-614}  -string {{WARNING: [Synth 8-614] signal 'tensP2' is read in the process but is not in the sensitivity list [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Scorebord.vhd:37]}}  -suppress 
 set_msg_config  -id {Synth 8-327}  -string {{WARNING: [Synth 8-327] inferring latch for variable 'tensP2_reg' [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Scorebord.vhd:68]}}  -suppress 

@@ -41,8 +41,8 @@ end process;
     
     pPauseWrite : process(Hcounter,Vcounter,SW_P)
 begin
-    if ((Hcounter <=315 and Hcounter >= 300) or (Hcounter >= 325 and Hcounter <= 340)) 
-    and (Vcounter <= 260 and Vcounter >= 220) 
+    if ((Hcounter <= 310 and Hcounter >= 295) or (Hcounter >= 330 and Hcounter <= 345)) 
+    and (Vcounter <= 270 and Vcounter >= 210) 
     and (SW_P = '1') 
     then
         write_p <= '1';

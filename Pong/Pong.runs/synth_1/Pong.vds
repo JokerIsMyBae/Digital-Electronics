@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Wed Dec 18 16:40:41 2019
-# Process ID: 12696
+# Start of session at: Thu Dec 19 10:28:23 2019
+# Process ID: 14516
 # Current directory: C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.runs/synth_1
 # Command line: vivado.exe -log Pong.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Pong.tcl
 # Log file: C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.runs/synth_1/Pong.vds
@@ -16,60 +16,58 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 14688 
+INFO: Helper process launched with PID 17496 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 716.875 ; gain = 178.141
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 717.363 ; gain = 177.297
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'Pong' [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Pong.vhd:32]
-INFO: [Synth 8-3491] module 'VGA' declared at 'C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/VGA.vhd:5' bound to instance 'Timings' of component 'VGA' [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Pong.vhd:151]
-INFO: [Synth 8-638] synthesizing module 'VGA' [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/VGA.vhd:16]
-INFO: [Synth 8-256] done synthesizing module 'VGA' (1#1) [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/VGA.vhd:16]
+INFO: [Synth 8-638] synthesizing module 'Pong' [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Pong.vhd:40]
+INFO: [Synth 8-3491] module 'VGA' declared at 'C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/VGA.vhd:5' bound to instance 'Timings' of component 'VGA' [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Pong.vhd:170]
+INFO: [Synth 8-638] synthesizing module 'VGA' [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/VGA.vhd:18]
+INFO: [Synth 8-256] done synthesizing module 'VGA' (1#1) [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/VGA.vhd:18]
 	Parameter gWidth bound to: 5 - type: integer 
-INFO: [Synth 8-3491] module 'Borders' declared at 'C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Borders.vhd:5' bound to instance 'Border' of component 'Borders' [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Pong.vhd:161]
+INFO: [Synth 8-3491] module 'Borders' declared at 'C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Borders.vhd:5' bound to instance 'Border' of component 'Borders' [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Pong.vhd:182]
 INFO: [Synth 8-638] synthesizing module 'Borders' [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Borders.vhd:15]
 	Parameter gWidth bound to: 5 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Borders' (2#1) [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Borders.vhd:15]
 	Parameter gBatHeight bound to: 50 - type: integer 
 	Parameter gBatWidth bound to: 5 - type: integer 
 	Parameter gBatOffset bound to: 16 - type: integer 
-INFO: [Synth 8-3491] module 'PongBat' declared at 'C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/PongBat.vhd:5' bound to instance 'Players' of component 'PongBat' [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Pong.vhd:170]
-INFO: [Synth 8-638] synthesizing module 'PongBat' [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/PongBat.vhd:24]
+INFO: [Synth 8-3491] module 'PongBat' declared at 'C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/PongBat.vhd:5' bound to instance 'Players' of component 'PongBat' [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Pong.vhd:191]
+INFO: [Synth 8-638] synthesizing module 'PongBat' [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/PongBat.vhd:27]
 	Parameter gBatHeight bound to: 50 - type: integer 
 	Parameter gBatWidth bound to: 5 - type: integer 
 	Parameter gBatOffset bound to: 16 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'PongBat' (3#1) [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/PongBat.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'PongBat' (3#1) [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/PongBat.vhd:27]
 	Parameter gBallSize bound to: 5 - type: integer 
 	Parameter gBatHeight bound to: 50 - type: integer 
-INFO: [Synth 8-3491] module 'Ball' declared at 'C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Ball.vhd:5' bound to instance 'BallPos' of component 'Ball' [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Pong.vhd:188]
-INFO: [Synth 8-638] synthesizing module 'Ball' [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Ball.vhd:20]
+INFO: [Synth 8-3491] module 'Ball' declared at 'C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Ball.vhd:5' bound to instance 'BallPos' of component 'Ball' [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Pong.vhd:212]
+INFO: [Synth 8-638] synthesizing module 'Ball' [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Ball.vhd:24]
 	Parameter gBallSize bound to: 5 - type: integer 
 	Parameter gBatHeight bound to: 50 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Ball' (4#1) [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Ball.vhd:20]
+INFO: [Synth 8-256] done synthesizing module 'Ball' (4#1) [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Ball.vhd:24]
 	Parameter gBallSize bound to: 5 - type: integer 
-INFO: [Synth 8-3491] module 'Scorebord' declared at 'C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Scorebord.vhd:5' bound to instance 'Score' of component 'Scorebord' [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Pong.vhd:202]
-INFO: [Synth 8-638] synthesizing module 'Scorebord' [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Scorebord.vhd:14]
+INFO: [Synth 8-3491] module 'Scorebord' declared at 'C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Scorebord.vhd:5' bound to instance 'Score' of component 'Scorebord' [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Pong.vhd:227]
+INFO: [Synth 8-638] synthesizing module 'Scorebord' [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Scorebord.vhd:15]
 	Parameter gBallSize bound to: 5 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'Scorebord' (5#1) [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Scorebord.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'Scorebord' (5#1) [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Scorebord.vhd:15]
 	Parameter seed bound to: 12'b000000000001 
-INFO: [Synth 8-3491] module 'Random' declared at 'C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Random.vhd:5' bound to instance 'RandomColor' of component 'Random' [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Pong.vhd:210]
+INFO: [Synth 8-3491] module 'Random' declared at 'C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Random.vhd:5' bound to instance 'RandomColor' of component 'Random' [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Pong.vhd:236]
 INFO: [Synth 8-638] synthesizing module 'Random' [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Random.vhd:13]
 	Parameter seed bound to: 12'b000000000001 
 INFO: [Synth 8-256] done synthesizing module 'Random' (6#1) [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Random.vhd:13]
 	Parameter gBallSize bound to: 5 - type: integer 
 	Parameter gBatHeight bound to: 50 - type: integer 
-INFO: [Synth 8-3491] module 'Audio' declared at 'C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Audio.vhd:5' bound to instance 'Audiodriver' of component 'Audio' [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Pong.vhd:217]
+INFO: [Synth 8-3491] module 'Audio' declared at 'C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Audio.vhd:5' bound to instance 'Audiodriver' of component 'Audio' [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Pong.vhd:243]
 INFO: [Synth 8-638] synthesizing module 'Audio' [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Audio.vhd:18]
 	Parameter gBallSize bound to: 5 - type: integer 
 	Parameter gBatHeight bound to: 50 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Audio' (7#1) [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Audio.vhd:18]
-INFO: [Synth 8-3491] module 'Background' declared at 'C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Background.vhd:5' bound to instance 'BackgroundColor' of component 'Background' [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Pong.vhd:229]
-INFO: [Synth 8-638] synthesizing module 'Background' [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Background.vhd:12]
-WARNING: [Synth 8-3848] Net CLK in module/entity Background does not have driver. [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Background.vhd:15]
-INFO: [Synth 8-256] done synthesizing module 'Background' (8#1) [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Background.vhd:12]
-INFO: [Synth 8-256] done synthesizing module 'Pong' (9#1) [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Pong.vhd:32]
-WARNING: [Synth 8-3331] design Background has unconnected port CLK100MHZ
+INFO: [Synth 8-3491] module 'Background' declared at 'C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Background.vhd:5' bound to instance 'BackgroundColor' of component 'Background' [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Pong.vhd:255]
+INFO: [Synth 8-638] synthesizing module 'Background' [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Background.vhd:13]
+INFO: [Synth 8-256] done synthesizing module 'Background' (8#1) [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Background.vhd:13]
+INFO: [Synth 8-256] done synthesizing module 'Pong' (9#1) [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Pong.vhd:40]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 780.863 ; gain = 242.129
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 780.176 ; gain = 240.109
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -82,10 +80,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 780.863 ; gain = 242.129
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 780.176 ; gain = 240.109
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 780.863 ; gain = 242.129
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 780.176 ; gain = 240.109
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -97,33 +95,46 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/Pong_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 905.883 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 909.473 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 905.883 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 909.473 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 905.883 ; gain = 367.148
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 909.473 ; gain = 369.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 905.883 ; gain = 367.148
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 909.473 ; gain = 369.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 905.883 ; gain = 367.148
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 909.473 ; gain = 369.406
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5544] ROM "cSegm[0]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "cSegm[0]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "cSegm[0]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "cSegm[0]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Background.vhd:40]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Background.vhd:40]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.srcs/sources_1/new/Background.vhd:40]
+INFO: [Synth 8-802] inferred FSM for state register 'counter1_reg' in module 'Background'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE0 |                              001 |                               00
+                 iSTATE1 |                              010 |                               01
+                  iSTATE |                              100 |                               10
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'counter1_reg' using encoding 'one-hot' in module 'Background'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 905.883 ; gain = 367.148
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 909.473 ; gain = 369.406
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -138,46 +149,47 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input     32 Bit       Adders := 8     
 	   2 Input     11 Bit       Adders := 4     
-	   2 Input     10 Bit       Adders := 5     
-	   2 Input      9 Bit       Adders := 9     
-	   2 Input      8 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 6     
+	   2 Input      9 Bit       Adders := 7     
 	   2 Input      7 Bit       Adders := 2     
-	   2 Input      5 Bit       Adders := 2     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
 	   3 Input      4 Bit       Adders := 2     
-	   2 Input      4 Bit       Adders := 5     
+	   2 Input      4 Bit       Adders := 4     
 	   2 Input      3 Bit       Adders := 1     
-	   2 Input      2 Bit       Adders := 1     
 +---XORs : 
 	   4 Input      1 Bit         XORs := 1     
 +---Registers : 
 	               12 Bit    Registers := 1     
 	               11 Bit    Registers := 1     
-	               10 Bit    Registers := 3     
+	               10 Bit    Registers := 4     
 	                9 Bit    Registers := 3     
-	                8 Bit    Registers := 2     
+	                8 Bit    Registers := 1     
 	                7 Bit    Registers := 3     
-	                5 Bit    Registers := 2     
-	                4 Bit    Registers := 5     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 4     
 	                3 Bit    Registers := 1     
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 14    
+	                1 Bit    Registers := 18    
 +---Muxes : 
-	   2 Input     10 Bit        Muxes := 3     
-	   2 Input      9 Bit        Muxes := 9     
-	   2 Input      8 Bit        Muxes := 9     
-	   4 Input      8 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 4     
+	   2 Input      9 Bit        Muxes := 17    
+	   2 Input      8 Bit        Muxes := 10    
 	   6 Input      8 Bit        Muxes := 1     
-	   5 Input      7 Bit        Muxes := 1     
-	  12 Input      7 Bit        Muxes := 1     
+	   4 Input      7 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 2     
+	  11 Input      7 Bit        Muxes := 1     
 	   5 Input      6 Bit        Muxes := 1     
-	   4 Input      5 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 11    
+	   4 Input      6 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 8     
 	   5 Input      4 Bit        Muxes := 3     
 	   4 Input      4 Bit        Muxes := 1     
 	   4 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 34    
-	   5 Input      1 Bit        Muxes := 1     
-	   3 Input      1 Bit        Muxes := 2     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 30    
+	   5 Input      1 Bit        Muxes := 2     
+	   3 Input      1 Bit        Muxes := 6     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -197,19 +209,20 @@ Detailed RTL Component Info :
 +---Registers : 
 	               11 Bit    Registers := 1     
 	               10 Bit    Registers := 2     
-	                1 Bit    Registers := 5     
+	                1 Bit    Registers := 6     
 +---Muxes : 
-	   2 Input      1 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 4     
 Module PongBat 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     32 Bit       Adders := 2     
-	   2 Input      9 Bit       Adders := 6     
+	   2 Input      9 Bit       Adders := 4     
 +---Registers : 
 	                9 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input      9 Bit        Muxes := 6     
-	   2 Input      1 Bit        Muxes := 6     
+	   2 Input      9 Bit        Muxes := 14    
+	   2 Input      1 Bit        Muxes := 8     
 Module Ball 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -225,29 +238,32 @@ Detailed RTL Component Info :
 	   2 Input     10 Bit        Muxes := 3     
 	   2 Input      9 Bit        Muxes := 3     
 	   2 Input      1 Bit        Muxes := 5     
+	   5 Input      1 Bit        Muxes := 1     
 Module Scorebord 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     11 Bit       Adders := 1     
-	   2 Input      8 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 1     
 	   2 Input      7 Bit       Adders := 2     
 	   3 Input      4 Bit       Adders := 2     
 	   2 Input      3 Bit       Adders := 1     
 +---Registers : 
-	                8 Bit    Registers := 2     
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
 	                7 Bit    Registers := 3     
 	                3 Bit    Registers := 1     
 	                1 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input      8 Bit        Muxes := 9     
-	   4 Input      8 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 10    
 	   6 Input      8 Bit        Muxes := 1     
-	   5 Input      7 Bit        Muxes := 1     
-	  12 Input      7 Bit        Muxes := 1     
+	   4 Input      7 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 2     
+	  11 Input      7 Bit        Muxes := 1     
 	   5 Input      6 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 2     
 	   4 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 8     
+	   2 Input      1 Bit        Muxes := 3     
 	   5 Input      1 Bit        Muxes := 1     
 Module Random 
 Detailed RTL Component Info : 
@@ -262,28 +278,31 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input     32 Bit       Adders := 3     
 	   2 Input     11 Bit       Adders := 1     
-	   2 Input      5 Bit       Adders := 2     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
 	   2 Input      4 Bit       Adders := 1     
 +---Registers : 
-	                5 Bit    Registers := 2     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
 	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 4     
 +---Muxes : 
-	   4 Input      5 Bit        Muxes := 1     
+	   4 Input      6 Bit        Muxes := 1     
 	   4 Input      4 Bit        Muxes := 1     
 	   3 Input      1 Bit        Muxes := 2     
 	   2 Input      1 Bit        Muxes := 4     
 Module Background 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input      4 Bit       Adders := 4     
-	   2 Input      2 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 3     
 +---Registers : 
-	                4 Bit    Registers := 4     
-	                2 Bit    Registers := 1     
+	                4 Bit    Registers := 3     
+	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input      4 Bit        Muxes := 3     
-	   2 Input      1 Bit        Muxes := 9     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 6     
+	   3 Input      1 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -300,9 +319,8 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-WARNING: [Synth 8-3331] design Background has unconnected port CLK100MHZ
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 905.883 ; gain = 367.148
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 909.473 ; gain = 369.406
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -314,13 +332,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 905.883 ; gain = 367.148
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 909.473 ; gain = 369.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 905.883 ; gain = 367.148
+Finished Timing Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 909.473 ; gain = 369.406
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -332,7 +350,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 918.141 ; gain = 379.406
+Finished Technology Mapping : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 921.355 ; gain = 381.289
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -356,7 +374,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 922.922 ; gain = 384.188
+Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:00:41 . Memory (MB): peak = 927.133 ; gain = 387.066
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -369,7 +387,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 922.922 ; gain = 384.188
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:41 ; elapsed = 00:00:41 . Memory (MB): peak = 927.133 ; gain = 387.066
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -381,25 +399,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 922.922 ; gain = 384.188
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 927.133 ; gain = 387.066
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 922.922 ; gain = 384.188
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 927.133 ; gain = 387.066
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 922.922 ; gain = 384.188
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 927.133 ; gain = 387.066
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 922.922 ; gain = 384.188
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 927.133 ; gain = 387.066
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -416,17 +434,17 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     2|
-|2     |CARRY4 |    64|
-|3     |LUT1   |    16|
-|4     |LUT2   |    26|
-|5     |LUT3   |    58|
-|6     |LUT4   |   241|
-|7     |LUT5   |   133|
-|8     |LUT6   |   180|
+|2     |CARRY4 |    75|
+|3     |LUT1   |    21|
+|4     |LUT2   |    30|
+|5     |LUT3   |    51|
+|6     |LUT4   |   244|
+|7     |LUT5   |   142|
+|8     |LUT6   |   214|
 |9     |MUXF7  |     3|
-|10    |FDRE   |   171|
-|11    |FDSE   |    16|
-|12    |IBUF   |     7|
+|10    |FDRE   |   225|
+|11    |FDSE   |    20|
+|12    |IBUF   |    10|
 |13    |OBUF   |    31|
 +------+-------+------+
 
@@ -434,37 +452,37 @@ Report Instance Areas:
 +------+------------------+-----------+------+
 |      |Instance          |Module     |Cells |
 +------+------------------+-----------+------+
-|1     |top               |           |   948|
-|2     |  Audiodriver     |Audio      |    37|
-|3     |  BackgroundColor |Background |     4|
-|4     |  BallPos         |Ball       |   233|
-|5     |  Players         |PongBat    |   225|
+|1     |top               |           |  1068|
+|2     |  Audiodriver     |Audio      |    41|
+|3     |  BackgroundColor |Background |    73|
+|4     |  BallPos         |Ball       |   223|
+|5     |  Players         |PongBat    |   231|
 |6     |  RandomColor     |Random     |    25|
-|7     |  Score           |Scorebord  |   168|
-|8     |  Timings         |VGA        |   216|
+|7     |  Score           |Scorebord  |   182|
+|8     |  Timings         |VGA        |   250|
 +------+------------------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 922.922 ; gain = 384.188
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 927.133 ; gain = 387.066
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:29 ; elapsed = 00:00:38 . Memory (MB): peak = 922.922 ; gain = 259.168
-Synthesis Optimization Complete : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 922.922 ; gain = 384.188
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:29 ; elapsed = 00:00:38 . Memory (MB): peak = 927.133 ; gain = 257.770
+Synthesis Optimization Complete : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 927.133 ; gain = 387.066
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 67 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 78 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 928.336 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 943.203 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-42 Infos, 3 Warnings, 0 Critical Warnings and 0 Errors encountered.
+47 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:47 ; elapsed = 00:00:49 . Memory (MB): peak = 928.336 ; gain = 637.121
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 928.336 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:48 ; elapsed = 00:00:50 . Memory (MB): peak = 943.203 ; gain = 652.148
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 943.203 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/joosv/OneDrive/Bureaublad/Vakken/Digitale Elektronica/Pong/Pong.runs/synth_1/Pong.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Pong_utilization_synth.rpt -pb Pong_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Dec 18 16:41:37 2019...
+INFO: [Common 17-206] Exiting Vivado at Thu Dec 19 10:29:19 2019...
